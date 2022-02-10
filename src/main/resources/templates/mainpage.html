@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration and Login App</title>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+</head>
+<body>
+	<!-- create navigation bar ( header) -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" th:href="@{/}">Registration and
+					Login Module</a>
+			</div>
+		</div>
+	</nav>
+	<br>
+	<br>
+	<br>
+	<br>
+	<h1 style="text-align:center">Registration and Login with Spring Boot,
+		Thymeleaf, Hibernate and MySQL</h1>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<h3 style="text-align:center" th:object="${user}">
+	Successfully Logged In Mr/Mrs. 
+	<span th:text="${user.getFirstName}"> </span>
+	<span th:text="${user.getLastName}"></span>
+	<br>
+	<br>
+	Roles
+	</h3>
+	
+	<h4>
+	<th:block>
+       <li th:each="role : ${user.getRoles}" th:text="${role.getName}" style="text-align:center"></li>
+    </th:block>
+	<br>
+	</h4>
+	
+	<br>
+	<form th:action="@{/login}"  style="text-align:center">
+		<div class="form-group">
+			<button type="submit" class="btn btn-danger">Logout</button>
+		</div>
+	</form>
+	
+	
+</body>
+</html>
