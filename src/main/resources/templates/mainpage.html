@@ -31,8 +31,8 @@
 	<br>
 	<br>
 	<br>
-	<h1 style="text-align:center">Registration and Login with Spring Boot,
-		Thymeleaf, Hibernate and MySQL</h1>
+	<h1 style="text-align: center">Registration and Login with Spring
+		Boot, Thymeleaf, Hibernate and MySQL</h1>
 	<br>
 	<br>
 	<br>
@@ -42,29 +42,26 @@
 	<br>
 	<br>
 	<br>
-	<h3 style="text-align:center" th:object="${user}">
-	Successfully Logged In Mr/Mrs. 
-	<span th:text="${user.getFirstName}"> </span>
-	<span th:text="${user.getLastName}"></span>
-	<br>
-	<br>
-	Roles
+	<h3 style="text-align: center" th:object="${user}">
+		Successfully Logged In Mr/Mrs. <span th:text="${user.getFirstName}">
+		</span> <span th:text="${user.getLastName}"></span> <br> <br> Roles
 	</h3>
-	
+
 	<h4>
-	<th:block>
-       <li th:each="role : ${user.getRoles}" th:text="${role.getName}" style="text-align:center"></li>
-    </th:block>
-	<br>
+		<th:block>
+			<li th:each="role : ${user.getRoles}" th:text="${role.getName}"
+				style="text-align: center"></li>
+
+		</th:block>
+		<br>
 	</h4>
-	
-	<br>
-	<form th:action="@{/login}"  style="text-align:center">
-		<div class="form-group">
-			<button type="submit" class="btn btn-danger">Logout</button>
+
+	<div class="container">
+		<div class="row"  style="text-align: center">
+			<a class="btn btn-danger" href="/login" role="button">Logout</a>
 		</div>
-	</form>
-	
-	
+	</div>
+
+
 </body>
 </html>
