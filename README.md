@@ -1,6 +1,6 @@
 # login-registration
 
-It's a login registration app with Java Spring Boot, Thymeleaf and MySQL. But i didn't used Spring Security. I've checked the email-password validity while login and if email has been used before check while registering at the controllers.
+It's a login registration app with Java Spring Boot, Thymeleaf and MySQL. But i didn't used Spring Security. I've checked the email-password validity while login at the service.
 
 There is a Many-to-Many connection between users and roles databases.
 
