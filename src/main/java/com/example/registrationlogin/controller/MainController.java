@@ -31,15 +31,10 @@ public class MainController {
 	
 	@PostMapping("/mainpage")
 	public String loginCheck(@ModelAttribute("userDto") UserLoginDto userDto, Model model) {
-		for(User user:userService.getAll()) {
-			if(user.getEmail().equals(userDto.getEmail())) {
-				if (user.getPassword().equals(userDto.getPassword())) {
-					model.addAttribute("user", user);
-					return "mainpage";
-				}else {
-					return "redirect:/login?error";
-				}
-			}
+		User user=userService.checkLogin(userDto);
+		if(user != null) {
+			model.addAttribute("user", user);
+			return "mainpage";
 		}
 		return "redirect:/login?error";
 		
